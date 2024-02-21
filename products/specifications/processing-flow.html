@@ -4,24 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harmonize Brazil Processing Flow &mdash; Harmonize Brazil</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/table_styling.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/bdc.css" type="text/css" />
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+      <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/bdc.css" type="text/css" />
+    <link rel="shortcut icon" href="../../static/favicon.png"/>
   <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
+    <script src="../../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js"></script>
+        <script src="../../static/jquery.js"></script>
+        <script src="../../static/underscore.js"></script>
+        <script src="../../static/doctools.js"></script>
+        <script src="../../static/clipboard.min.js"></script>
+        <script src="../../static/copybutton.js"></script>
+    <script src="../../static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="CLEAROB" href="bands/CLEAROB.html" />
@@ -34,7 +34,7 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
             <a href="../../index.html" class="icon icon-home"> Harmonize Brazil
-            <img src="../../_static/harmonize_logo.png" class="logo" alt="Logo"/>
+            <img src="../../static/harmonize_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -117,7 +117,7 @@
 <span id="processing-flow"></span><h1>Harmonize Brazil Processing Flow<a class="headerlink" href="#Harmonize Brazil-processing-flow" title="Permalink to this headline"></a></h1>
 <p>Several procedures are performed to generate Harmonize Harmonize Brazil collections. Based on that, <a class="reference internal" href="#products-processing-flow"><span class="std std-numref">Figure 4</span></a> illustrates a diagram containing the main procedures used to generate Harmonize Brazil data products.</p>
 <div class="align-center figure align-default" id="products-processing-flow">
-<a class="reference internal image-reference" href="../../_images/Harmonize Brazil.png"><img alt="Harmonize Brazil Image collection ingestion and Data Cube generation" src="../../_images/Harmonize Brazil.png" style="width: 720px;" /></a>
+<a class="reference internal image-reference" href="../../images/Harmonize Brazil.png"><img alt="Harmonize Brazil Image collection ingestion and Data Cube generation" src="../../images/Harmonize Brazil.png" style="width: 720px;" /></a>
 <p class="caption"><span class="caption-number">Figure 4 - </span><span class="caption-text">Harmonize Brazil Image collection ingestion and Data Cube generation.</span><a class="headerlink" href="#products-processing-flow" title="Permalink to this image"></a></p>
 </div>
 <div class="section" id="image-collection-builder">
@@ -137,7 +137,7 @@
 <h3>Warp (Merge, Reprojecting, Resampling and Griding)<a class="headerlink" href="#warp-merge-reprojecting-resampling-and-griding" title="Permalink to this headline"></a></h3>
 <p>In order to build the data cube collections, all input images must be at the same projection, using the same tile system and present the same spatial resolution. The Warp procedure perform this standardization and can be seen in <a class="reference internal" href="#products-cube-builder"><span class="std std-numref">Figure 5</span></a>. Warp consists in cropping and mosaicking all images that superimpose a target tile of the common grid, for a specific date. This spatial mosaic is reprojected to the target tile reference system and all bands are resampled to a determined spatial resolution through a bilinear function, except for quality assessment band, which is resampled using nearest neighbor to avoid changes on the image values.</p>
 <div class="align-center figure align-default" id="products-cube-builder">
-<a class="reference internal image-reference" href="../../_images/cube-builder.png"><img alt="Harmonize Brazil Cube generation" src="../../_images/cube-builder.png" style="width: 720px;" /></a>
+<a class="reference internal image-reference" href="../../images/cube-builder.png"><img alt="Harmonize Brazil Cube generation" src="../../images/cube-builder.png" style="width: 720px;" /></a>
 <p class="caption"><span class="caption-number">Figure 5 - </span><span class="caption-text">Data Cube generation.</span><a class="headerlink" href="#products-cube-builder" title="Permalink to this image"></a></p>
 </div>
 </div>
@@ -184,7 +184,7 @@
 </table>
 <p>The Average temporal composing consists in the average of the observed values. The Median temporal compositing consists in the median value of the observations. The Least Cloud Cover First (LCF) temporal compositing consists in aggregating pixels from all images in the time interval according to each image quantity of valid pixels, e. g. a pixel from an image with efficacy of 95% (5% of cloud, cloud shadows or partial image) is more reliable of compositing the final image than a pixel from a 60% efficacy image. The mentioned compositing functions can be seen in <a class="reference internal" href="#products-compositing-functions"><span class="std std-numref">Figure 6</span></a>.</p>
 <div class="align-center figure align-default" id="products-compositing-functions">
-<a class="reference internal image-reference" href="../../_images/compositing-function.png"><img alt="Harmonize Brazil Time Compositing Functions" src="../../_images/compositing-function.png" style="width: 720px;" /></a>
+<a class="reference internal image-reference" href="../../images/compositing-function.png"><img alt="Harmonize Brazil Time Compositing Functions" src="../../images/compositing-function.png" style="width: 720px;" /></a>
 <p class="caption"><span class="caption-number">Figure 6 - </span><span class="caption-text">Harmonize Brazil Time Compositing Functions.</span><a class="headerlink" href="#products-compositing-functions" title="Permalink to this image"></a></p>
 </div>
 <div class="admonition note">

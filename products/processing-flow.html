@@ -11,13 +11,13 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/copybutton.css" type="text/css" />
 
   
   
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../static/favicon.png"/>
   
   
   
@@ -26,20 +26,20 @@
 
   
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script src="../static/clipboard.min.js"></script>
+        <script src="../static/copybutton.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
@@ -64,7 +64,7 @@
 
           
             
-            <img src="../_static/harmonize_logo.png" class="logo" alt="Logo"/>
+            <img src="../static/harmonize_logo.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -203,7 +203,7 @@
 <span id="processing-flow"></span><h1>Harmonize Brazil Processing Flow<a class="headerlink" href="#Harmonize Brazil-processing-flow" title="Permalink to this headline">¶</a></h1>
 <p>Several procedures are performed to generate Harmonize Harmonize Brazil collections. Based on that, <a class="reference internal" href="#products-processing-flow"><span class="std std-numref">Figure 1</span></a> illustrates a diagram containing the main procedures used to generate Harmonize Brazil data products.</p>
 <div class="align-center figure align-default" id="products-processing-flow">
-<a class="reference internal image-reference" href="../_images/Harmonize Brazil.png"><img alt="Harmonize Brazil Image collection injestion and Data Cube generation" src="../_images/Harmonize Brazil.png" style="width: 720px;" /></a>
+<a class="reference internal image-reference" href="../images/Harmonize Brazil.png"><img alt="Harmonize Brazil Image collection injestion and Data Cube generation" src="../images/Harmonize Brazil.png" style="width: 720px;" /></a>
 <p class="caption"><span class="caption-number">Figure 1 - </span><span class="caption-text">Harmonize Brazil Image collection injestion and Data Cube generation.</span><a class="headerlink" href="#products-processing-flow" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="atmospheric-correction">
@@ -214,7 +214,7 @@
 <h2>Warp (Merge, Reprojecting, Resampling and Griding)<a class="headerlink" href="#warp-merge-reprojecting-resampling-and-griding" title="Permalink to this headline">¶</a></h2>
 <p>In order to build the data cube collections, all input images must be at the on the same projection, using the same tile system and present the same spatial resolution. The Warp procedure perform this standardization. Warp consists in cropping and mosaicking all images that superimpose a target tile of the common grid, for a specific date. This spatial mosaic is reprojected to the target tile reference system and all bands are resampled to a determined spatial resolution through a bilinear function, except for quality assessment band, which is resampled using nearest neighbor to avoid changes on the image values.</p>
 <div class="align-center figure align-default" id="products-cube-builder">
-<a class="reference internal image-reference" href="../_images/cube-builder.png"><img alt="Harmonize Brazil Cube generation" src="../_images/cube-builder.png" style="width: 720px;" /></a>
+<a class="reference internal image-reference" href="../images/cube-builder.png"><img alt="Harmonize Brazil Cube generation" src="../images/cube-builder.png" style="width: 720px;" /></a>
 <p class="caption"><span class="caption-number">Figure 2 - </span><span class="caption-text">Harmonize Brazil Image collection injestion and Data Cube generation.</span><a class="headerlink" href="#products-cube-builder" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -223,7 +223,7 @@
 <p>Harmonize Harmonize Brazil Collections can be categorized in two types, identity and regular. An identity data cube nature consists in using all available images from its sensors original acquisitions. Based on that, its temporal compositing function is identity. Temporal Compositing function can be used to generate regular series. This is performed by reducing the time dimension, which generates regularly spaced in time observations, here called regular data cubes.</p>
 <p>Three temporal compositing functions are being used in Harmonize Brazil: ( <em>i</em> ) average, ( <em>ii</em> ) median, and ( <em>iii</em> ) stack. These functions are operations applied on valid observations, which are not detected as cloud or cloud shadow by the quality assessment band, considering the time dimension and a time step, e. g. monthly or 16 days. The Average temporal composing consists in the average of the observed values. The Median temporal compositing consists in the median value of the observations. The stack temporal compositing consists in aggregating pixels from all images in the time interval according to each image quantity of valid pixels, e. g. a pixel from an image with efficacy of 95% (5% of cloud, cloud shadows or partial image) is more reliable of compositing the final image than a pixel from a 60% efficacy image.</p>
 <div class="align-center figure align-default" id="products-compositing-functions">
-<a class="reference internal image-reference" href="../_images/compositing-function.png"><img alt="Harmonize Brazil Time Compositing Functions" src="../_images/compositing-function.png" style="width: 720px;" /></a>
+<a class="reference internal image-reference" href="../images/compositing-function.png"><img alt="Harmonize Brazil Time Compositing Functions" src="../images/compositing-function.png" style="width: 720px;" /></a>
 <p class="caption"><span class="caption-number">Figure 3 - </span><span class="caption-text">Harmonize Brazil Time Compositing Functions.</span><a class="headerlink" href="#products-compositing-functions" title="Permalink to this image">¶</a></p>
 </div>
 </div>
